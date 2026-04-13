@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* --- 1. Theme Configuration --- */
+@theme {
+  /* Set Inter as the default font */
+  /* --font-sans: 'Inter', sans-serif; */
+  
+  /* Custom Animations */
+  --animate-fade-up: fadeUp 0.8s ease-out forwards;
+  --animate-bounce-slow: bounce 2s infinite;
+
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* --- 2. Custom App Styles (From your DevTools digging) --- */
+
+/* Smooth Scroll for Navigation Links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Cyberpunk Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1a1a1a;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00d4ff; /* The glowing cyan color */
+}
+
+/* --- 3. Custom Utility Classes --- */
+
+@utility bg-hero-pattern {
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+@utility glass-button {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  transition-property: all;
+  transition-duration: 300ms;
+}
+
+/* Custom Scrollbar for the Projects Section */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(31, 41, 55, 0.3); /* dark gray / almost transparent */
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.4); /* subtle cyan */
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.8); /* brighter cyan on hover */
+}
